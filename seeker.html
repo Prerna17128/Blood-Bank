@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href='donate.css'>
+    <link rel="icon" href='./Images/bb_logo(black).png' type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="donor.css">
+</head>
+<title>Connect with us & save lives around your location </title>
+
+<body>
+    <header>
+        <nav>
+            <div class="header-logo"><img src="./Images/bb_logo(black).png"></div>
+            <div class="header-list">
+                <ul>
+                    <li><a href="help.html" target="_blank"> Get Help</a></li>
+                    <li><a href="seeker.html">Need Blood?</a></li>
+                    <li><a href="index.html#vol-sect" target="_blank">Volunteer</a></li>
+                    <li><a href="index.html#about-us" target="_blank">About Us</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="portal">
+            <div class="container">
+            <h1 style="text-align: center;" class="heading"><i><b><u>Seeker Info</u></b></i></h1><br>
+             
+          
+            <form align="center" class="box">
+                <table align="center">
+                    <tr>
+                        <td class="line">
+                            Name : 
+                        </td>
+                        <td>
+                            <input type="text"  class= "txt" placeholder="Enter you name" name="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="line">
+                            Gender :
+                        </td>
+                        <td>
+                            <div class="gender">
+                            <input type="radio" name="gender">Male
+                            <input type="radio" name="gender">Female
+                            <input type="radio" name="gender">Other
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="line">
+                            Bloodtype : 
+                        </td>
+                        <th>
+                            <input type="text" class="txt" placeholder="Enter blood type" blood type="">
+                        </th>
+                    </tr>
+        
+                    <tr>
+                        <td class="line">
+                            Contact no. : 
+                        </td>
+                        <td>
+                            <input type="phone" class="txt" placeholder="+91**********">
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td class="line">
+                            Location : 
+                        </td>
+                        <td>
+                            <input type="text" class="txt" placeholder="Enter your location" location="">
+                        </td>
+                    </tr>
+                
+                
+        
+        </tr>
+        
+                
+        
+                </table>
+                
+                <button id="submit" type="submit" class=" btn" value="Submit">submit</button>
+                
+               
+            </form>
+        </div>
+        
+        </div>
+        
+        
+            <script>
+                function addDonor() {
+                    const name = document.getElementById('name').value;
+                    const bloodType = document.getElementById('bloodType').value;
+                    const contactNumber = document.getElementById('contactNumber').value;
+                    const location = document.getElementById('location').value;
+        
+                    const donorDetails = `${name} - Blood Type: ${bloodType}, Contact: ${contactNumber}, Location: ${location}`;
+        
+                    const donorInfo = document.getElementById('donorInfo');
+                    const infoItem = document.createElement('li');
+                    infoItem.appendChild(document.createTextNode(donorDetails));
+                    donorInfo.appendChild(infoItem);
+                }
+            </script>
+
+
+    </main>
+
+
+
+    <footer>
+        <div class="siteFooterBar">
+            <div class="content1">
+                <div class="foot">2021 © All rights reserved.</div>
+            </div>
+        </div>
+        <div class="footer-content">
+            <h3>JOIN OUR CAUSE</h3>
+            <p>Donating blood or platelets can be intimidating and even scary. Time to put those hesitations and fears aside. Learn from Blood Buddy and platelet donors how simple and easy it is to roll up a sleeve and help save lives.</p>
+            <div class="socials">
+                <ul class="sci">
+                    <li><a href="https://www.facebook.com/givebloodnhs/" target="_blank"><i
+                                class="fab fa-facebook"></i></a></li>
+                    <li><a href="https://www.instagram.com/indiablooddonation/?hl=en" target="_blank"><i
+                                class="fab fa-instagram"></i></a></li>
+                    <li><a href="http://nbtc.naco.gov.in/" target="_blank"><i class="fas fa-globe"></i></a></li>
+                </ul>
+            </div>
+        </div>
+
+
+    </footer>
+    
+
+
+</body>

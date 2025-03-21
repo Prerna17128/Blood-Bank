@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href='Register.css'>
+    <link rel="icon" href='./Images/bb_logo(black).png' type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+<title>Start Saving Lives </title>
+<script>
+    function registerUser() {
+        const Name = document.getElementById('username').value;
+        const Email = document.getElementById('email').value;
+        const Password = document.getElementById('password').value;
+        const Type = document.getElementById('user_type').value;
+    
+        // You can use the Fetch API or another method to send this data to the server
+        // Update the URL in your JavaScript code
+        fetch('/api/register', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+        username: Name,
+        email: Email,
+        password: Password,
+        user_type: Type
+    })
+})
+// ... (rest of your JavaScript code remains the same)
+
+        .then(response => response.json())
+        .then(data => {
+            // Handle the response from the server (e.g., show a success message)
+            console.log('Response from server:', data);
+            alert('Registration successful!');
+            // Redirect to the appropriate home page based on user type
+            window.location.href = Type === 'Donor' ? '/index' : '/index2';
+        })
+        .catch(error => {
+            console.error('Error registering user:', error);
+        });
+    }
+    </script>
+<body>
+    <br>
+    <br>
+    <br>
+    <h1 class="register" ><i><b><u>Register</u></b></i></h1>
+
+
+<div class="inner">
+    <div class="photo">
+        <img src="./Images/regphoto.png">
+    </div>
+    <div class="user-form">
+        <h1>Start Saving Lives</h1>
+        <form action="{{ url_for('register_form') }}" method="post">
+
+            <i class="fas fa-user icon"></i>
+            <input type="text" placeholder="Name">
+            <br>
+            <i class="fas fa-envelope-square"></i>
+            <input type="email" placeholder="E-mail">
+            <br>
+            <i class="fas fa-lock"></i>
+            <input type="password" placeholder="Password" id="password_data">
+            <div class="safety" style="font-family: sans-serif; font-size: 20px;">
+                <br>
+                <i class="fas fa-user icon"></i>
+                <select id="user_type" placeholder="Select">
+
+                    
+                    <option>Donor</option>
+                    <option>Seeker</option>
+            </select>
+            </div>
+            <div class="action-btn" align="center">
+                <button type="submit" class="btn primary">Create Account</button>
+
+            </div>
+        </form>
+    </div>
+</div>
+<script src="C:\Users\amit\Desktop\projects\Blood-Buddy\Register.js"></script>
+</body>
+</html>
